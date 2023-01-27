@@ -17,6 +17,12 @@ terraform {
   }
 }
 
+# Configure the Okta Provider
+provider "okta" {
+  org_name  = "dev-21824928"
+  base_url  = "okta.com"
+}
+
 resource "okta_group_rule" "Engineering-Team-Membership" {
   name              = "Engineering Team Membership"
   status            = "ACTIVE"
