@@ -37,3 +37,4 @@ resource "okta_group_rule" "Engineering-Developers-AWS-Shadow-Group-Membership" 
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "user.department==\"Engineering\" AND user.division==\"Developers\" AND isMemberOfAnyGroup(\"00g849vl936mYxyUD5d7\")"
 }
+
