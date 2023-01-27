@@ -44,3 +44,10 @@ resource "okta_group_rule" "Engineering-Testers-AWS-Shadow-Group-Membership" {
   expression_type   = "urn:okta:expression:1.0"
   expression_value  = "user.department==\"Engineering\" AND user.division==\"Testers\" AND isMemberOfAnyGroup(\"00g849vl936mYxyUD5d7\")"
 }
+resource "okta_group_rule" "Engineering-Managers-AWS-Shadow-Group-Membership" {
+  name              = "Engineering Managers AWS-Shadow-Group-Membership"
+  status            = "ACTIVE"
+  group_assignments = ["00g849tihhOJX5rfj5d7"]
+  expression_type   = "urn:okta:expression:1.0"
+  expression_value  = "user.department==\"Engineering\" AND user.userType==\"Manager\" AND isMemberOfAnyGroup(\"00g849vl936mYxyUD5d7\")"
+}
